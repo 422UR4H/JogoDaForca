@@ -1,15 +1,15 @@
 import "./style.css";
+import palavras from "../../scripts/palavras";
 
-export default function Letra({ letra, botoesLetras, setBotoesLetras }) {
+export default function Letra({ letra, botoesLetras, setBotoesLetras, setErros }) {
     function onPlay() {
         setBotoesLetras(botoesLetras.filter((l) => l !== letra));
 
-        /*if (palavras[0].contains(letraSelecionada)) {
+        if (palavras[0].includes(letra)) {
             // mostrar o caractere no underline
-    
-            // desativar botão
-    
-        }*/
+        } else {
+            setErros();
+        }
     }
 
     return (botoesLetras.includes(letra) ?

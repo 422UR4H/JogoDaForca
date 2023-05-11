@@ -20,10 +20,14 @@ function App() {
 
   palavras.sort(comparator);
 
+  function incrementaErros() {
+    setErros(erros + 1);
+  }
+
   return (
     <div className="App">
       <Jogo src={forca[erros]} alt="forca0" palavra={palavras[0]} setBotoesLetras={setBotoesLetras} />
-      <Letras botoesLetras={botoesLetras} setBotoesLetras={setBotoesLetras} />
+      <Letras botoesLetras={botoesLetras} setBotoesLetras={setBotoesLetras} setErros={incrementaErros} />
     </div>
   );
 }

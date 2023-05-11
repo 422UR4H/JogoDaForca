@@ -4,14 +4,12 @@ import { useState } from 'react';
 import './style.css';
 
 
-export default function Jogo({ src, alt, palavra, setBotoesLetras }) {
+export default function Jogo({ src, alt, setBotoesLetras }) {
     const [palavraOculta, setPalavraOculta] = useState(<Palavra />);
 
-    function iniciarJogo(palavra) {
+    function iniciarJogo() {
         setPalavraOculta(
-            <div className="palavra">
-                {palavra.split('').map((c, i) => <Palavra key={i} l="_" />)}
-            </div>
+            <Palavra letra="_" />
         );
 
         setBotoesLetras([...alfabeto]);
@@ -21,7 +19,7 @@ export default function Jogo({ src, alt, palavra, setBotoesLetras }) {
         <div className="jogo">
             <img className="forca" src={src} alt={alt} />
             <div>
-                <button onClick={() => iniciarJogo(palavra)}>Escolher Palavra</button>
+                <button onClick={() => iniciarJogo()}>Escolher Palavra</button>
                 {palavraOculta}
             </div>
         </div>
