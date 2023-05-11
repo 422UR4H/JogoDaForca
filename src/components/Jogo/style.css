@@ -1,0 +1,41 @@
+img.forca {
+    width: 400px;
+}
+
+div.jogo {
+    width: 934px;
+    margin: 60px auto;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+div.jogo > div {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+div.jogo button {
+    background-color: #27AE60;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 23.44px;
+
+    width: 200px;
+    height: 60px;
+    margin-top: 30px;
+    margin-left: auto;
+
+    border: none;
+    border-radius: 8px;
+
+}
+
+div.palavra {
+    display: flex;
+    margin-left: auto;
+    margin-bottom: 30px;
+}

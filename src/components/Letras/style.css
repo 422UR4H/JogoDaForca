@@ -1,0 +1,31 @@
+button.letra {
+    color: #39739D;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18.75px;
+
+    background-color: #E1ECF4;
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+    margin-bottom: 11px;
+    
+    border: 1px solid #7AA7C7;
+    border-radius: 3px;
+}
+
+button:disabled {
+    background-color: #9FAAB5;
+    color: #798A9F;
+}
+
+div.letras {
+    width: 676px;
+    height: 91px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: space-evenly; */
+    /* justify-content: space-between; */
+}
