@@ -34,11 +34,12 @@ function App() {
     <div className="App">
       <Jogo src={forca[erros]}
         alt="forca0"
-        cor={cor}
+        setCor={setCor}
         setBotoesLetras={setBotoesLetras}
         palavraOculta={palavraOculta}
         setPalavraOculta={setPalavraOculta}
         setArrayPalavra={setArrayPalavra}
+        setErros={setErros}
       />
       <Letras botoesLetras={botoesLetras}
         setBotoesLetras={setBotoesLetras}
