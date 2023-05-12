@@ -1,11 +1,10 @@
 import Caractere from "./Caractere";
-import palavras from "../../scripts/palavras";
 import "./style.css";
 
-export default function Palavra({ letra, palavra }) {
+export default function Palavra({ arrayPalavra }) {
     return (
         <div className="palavra">
-            {palavras[0].split('').map((c, i) => <Caractere key={i} c={letra} />)}
+            {arrayPalavra.map((c, i) => <Caractere key={i} c={c} />)}
         </div>
     );
 }

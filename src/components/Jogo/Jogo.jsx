@@ -1,17 +1,16 @@
 import Palavra from '../Palavra/Palavra';
 import alfabeto from '../../scripts/alfabeto';
-import { useState } from 'react';
+import palavras from '../../scripts/palavras';
+import comparator from '../../scripts/comparator';
 import './style.css';
 
 
-export default function Jogo({ src, alt, setBotoesLetras }) {
-    const [palavraOculta, setPalavraOculta] = useState(<Palavra />);
-
+export default function Jogo({ src, alt, setBotoesLetras, palavraOculta, setPalavraOculta, setArrayPalavra }) {
     function iniciarJogo() {
-        setPalavraOculta(
-            <Palavra letra="_" />
-        );
-
+        palavras.sort(comparator);
+        const novoArrayPalavra = palavras[0].split('').map(() => '_');
+        setArrayPalavra(novoArrayPalavra);
+        setPalavraOculta(<Palavra arrayPalavra={novoArrayPalavra} />);
         setBotoesLetras([...alfabeto]);
     }
 

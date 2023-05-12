@@ -5,3 +5,11 @@ div.caractere {
     width: 21px;
     margin: 13px;
 }
+
+.vermelho {
+    color: #FF0000;
+}
+
+.verde {
+    color: #27AE60;
+}
