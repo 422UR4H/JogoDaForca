@@ -3,7 +3,7 @@ import palavras from "../../palavras";
 import Palavra from "../Palavra/Palavra";
 import fimDeJogo from "../../scripts/fimDeJogo";
 
-export default function Letra({ letra, cor, setCor, botoesLetras, setBotoesLetras, incrementaErros, setPalavraOculta, arrayPalavra, setArrayPalavra }) {
+export default function Letra({ letra, cor, setCor, botoesLetras, setBotoesLetras, incrementaErros, setPalavraOculta, arrayPalavra, setArrayPalavra, setJogoIniciado }) {
     function onPlay() {
         // desabilitando botão clicado
         setBotoesLetras(botoesLetras.filter((l) => l !== letra));
@@ -21,7 +21,7 @@ export default function Letra({ letra, cor, setCor, botoesLetras, setBotoesLetra
 
             let novaCor = cor;
             if (!novaArrayPalavra.includes('_')) {
-                fimDeJogo(true, setCor, setBotoesLetras, setPalavraOculta);
+                fimDeJogo(true, setCor, setBotoesLetras, setPalavraOculta, setJogoIniciado);
                 novaCor = "verde";
             }
 
@@ -31,8 +31,9 @@ export default function Letra({ letra, cor, setCor, botoesLetras, setBotoesLetra
         }
     }
 
-    return (botoesLetras.includes(letra) ?
-        <button data-test="letter" onClick={onPlay} className="letra">{letra.toUpperCase()}</button> :
-        <button disabled data-test="letter" onClick={onPlay} className="letra">{letra.toUpperCase()}</button>
+    return (
+        <button disabled={!botoesLetras.includes(letra)} data-test="letter" onClick={onPlay} className="letra">
+            {letra.toUpperCase()}
+        </button>
     );
 }

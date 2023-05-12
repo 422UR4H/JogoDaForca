@@ -26,6 +26,4 @@ div.letras {
 
     display: flex;
     flex-wrap: wrap;
-    /* align-items: space-evenly; */
-    /* justify-content: space-between; */
 }

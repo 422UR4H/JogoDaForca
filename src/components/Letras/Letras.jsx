@@ -3,7 +3,7 @@ import "./style.css";
 import alfabeto from "../../scripts/alfabeto"
 
 
-export default function Letras({ botoesLetras, setBotoesLetras, incrementaErros, setPalavraOculta, arrayPalavra, setArrayPalavra, cor, setCor }) {
+export default function Letras({ botoesLetras, setBotoesLetras, incrementaErros, setPalavraOculta, arrayPalavra, setArrayPalavra, setJogoIniciado, cor, setCor }) {
     return (
         <div className="letras">
             {alfabeto.map((letra) =>
@@ -17,6 +17,7 @@ export default function Letras({ botoesLetras, setBotoesLetras, incrementaErros,
                     setPalavraOculta={setPalavraOculta}
                     arrayPalavra={arrayPalavra}
                     setArrayPalavra={setArrayPalavra}
+                    setJogoIniciado={setJogoIniciado}
                 />
             )}
         </div>
