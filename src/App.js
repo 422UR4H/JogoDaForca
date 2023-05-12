@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Jogo from './components/Jogo/Jogo';
 import Letras from './components/Letras/Letras';
+import fimDeJogo from './scripts/fimDeJogo';
 import forca0 from './assets/images/forca0.png';
 import forca1 from './assets/images/forca1.png';
 import forca2 from './assets/images/forca2.png';
@@ -12,6 +13,7 @@ import forca6 from './assets/images/forca6.png';
 
 function App() {
   const [erros, setErros] = useState(0);
+  const [cor, setCor] = useState("");
   const [palavraOculta, setPalavraOculta] = useState('');
   const [botoesLetras, setBotoesLetras] = useState([]);
   const [arrayPalavra, setArrayPalavra] = useState(['']);
@@ -19,13 +21,20 @@ function App() {
 
 
   function incrementaErros() {
+    if (erros >= 6) {
+      return;
+    }
     setErros(erros + 1);
+    if (erros >= 5) {
+      fimDeJogo(false, setCor, setBotoesLetras, setPalavraOculta);
+    }
   }
 
   return (
     <div className="App">
       <Jogo src={forca[erros]}
         alt="forca0"
+        cor={cor}
         setBotoesLetras={setBotoesLetras}
         palavraOculta={palavraOculta}
         setPalavraOculta={setPalavraOculta}
@@ -33,11 +42,13 @@ function App() {
       />
       <Letras botoesLetras={botoesLetras}
         setBotoesLetras={setBotoesLetras}
-        setErros={incrementaErros}
+        incrementaErros={incrementaErros}
         palavraOculta={palavraOculta}
         setPalavraOculta={setPalavraOculta}
         arrayPalavra={arrayPalavra}
         setArrayPalavra={setArrayPalavra}
+        cor={cor}
+        setCor={setCor}
       />
     </div>
   );

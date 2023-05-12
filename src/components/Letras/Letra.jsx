@@ -1,8 +1,9 @@
 import "./style.css";
 import palavras from "../../scripts/palavras";
 import Palavra from "../Palavra/Palavra";
+import fimDeJogo from "../../scripts/fimDeJogo";
 
-export default function Letra({ letra, botoesLetras, setBotoesLetras, setErros, setPalavraOculta, arrayPalavra, setArrayPalavra }) {
+export default function Letra({ letra, cor, setCor, botoesLetras, setBotoesLetras, incrementaErros, setPalavraOculta, arrayPalavra, setArrayPalavra }) {
     function onPlay() {
         // desabilitando botão clicado
         setBotoesLetras(botoesLetras.filter((l) => l !== letra));
@@ -17,10 +18,16 @@ export default function Letra({ letra, botoesLetras, setBotoesLetras, setErros, 
                 }
             }
             setArrayPalavra(novaArrayPalavra);
-            
-            setPalavraOculta(<Palavra arrayPalavra={novaArrayPalavra} />);
+
+            let novaCor = cor;
+            if (!novaArrayPalavra.includes('_')) {
+                fimDeJogo(true, setCor, setBotoesLetras, setPalavraOculta);
+                novaCor = "verde";
+            }
+
+            setPalavraOculta(<Palavra arrayPalavra={novaArrayPalavra} cor={novaCor} />);
         } else {
-            setErros();
+            incrementaErros();
         }
     }
 

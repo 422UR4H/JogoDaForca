@@ -5,12 +5,12 @@ import comparator from '../../scripts/comparator';
 import './style.css';
 
 
-export default function Jogo({ src, alt, setBotoesLetras, palavraOculta, setPalavraOculta, setArrayPalavra }) {
+export default function Jogo({ src, alt, cor, setBotoesLetras, palavraOculta, setPalavraOculta, setArrayPalavra }) {
     function iniciarJogo() {
         palavras.sort(comparator);
         const novoArrayPalavra = palavras[0].split('').map(() => '_');
         setArrayPalavra(novoArrayPalavra);
-        setPalavraOculta(<Palavra arrayPalavra={novoArrayPalavra} />);
+        setPalavraOculta(<Palavra arrayPalavra={novoArrayPalavra} cor={cor} />);
         setBotoesLetras([...alfabeto]);
     }
 
