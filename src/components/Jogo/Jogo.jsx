@@ -18,9 +18,9 @@ export default function Jogo({ src, alt, setCor, setBotoesLetras, palavraOculta,
 
     return (
         <div className="jogo">
-            <img className="forca" src={src} alt={alt} />
+            <img className="forca" src={src} alt={alt} data-test="game-image" />
             <div>
-                <button onClick={() => iniciarJogo()}>Escolher Palavra</button>
+                <button data-test="choose-word" onClick={() => iniciarJogo()}>Escolher Palavra</button>
                 {palavraOculta}
             </div>
         </div>

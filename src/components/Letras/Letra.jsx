@@ -32,7 +32,7 @@ export default function Letra({ letra, cor, setCor, botoesLetras, setBotoesLetra
     }
 
     return (botoesLetras.includes(letra) ?
-        <button onClick={onPlay} className="letra">{letra.toUpperCase()}</button> :
-        <button disabled className="letra">{letra.toUpperCase()}</button>
+        <button data-test="letter" onClick={onPlay} className="letra">{letra.toUpperCase()}</button> :
+        <button disabled data-test="letter" onClick={onPlay} className="letra">{letra.toUpperCase()}</button>
     );
 }
