@@ -1,6 +1,6 @@
 import Palavra from '../Palavra/Palavra';
 import alfabeto from '../../scripts/alfabeto';
-import palavras from '../../scripts/palavras';
+import palavras from '../../palavras';
 import comparator from '../../scripts/comparator';
 import './style.css';
 

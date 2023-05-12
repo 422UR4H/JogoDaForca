@@ -1,5 +1,5 @@
 import "./style.css";
-import palavras from "../../scripts/palavras";
+import palavras from "../../palavras";
 import Palavra from "../Palavra/Palavra";
 import fimDeJogo from "../../scripts/fimDeJogo";
 

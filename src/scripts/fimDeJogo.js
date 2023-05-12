@@ -1,4 +1,4 @@
-import palavras from "./palavras";
+import palavras from "../palavras";
 import Palavra from "../components/Palavra/Palavra";
 
 export default function fimDeJogo(vitoria, setCor, setBotoesLetras, setPalavraOculta) {
