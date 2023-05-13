@@ -9,6 +9,7 @@ export default function Jogo({ src, setCor, setBotoesLetras, palavraOculta, setP
     function iniciarJogo() {
         palavras.sort(comparator);
         const novoArrayPalavra = palavras[0].split('').map(() => '_');
+        console.log(palavras[0]);
         setArrayPalavra(novoArrayPalavra);
         setPalavraOculta(<Palavra arrayPalavra={novoArrayPalavra} cor={""} />);
         setBotoesLetras([...alfabeto]);

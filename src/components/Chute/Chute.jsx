@@ -2,6 +2,7 @@ import "./style.css";
 import { useState } from "react";
 import palavras from "../../palavras";
 import fimDeJogo from "../../scripts/fimDeJogo";
+import unidecode from "unidecode";
 
 export default function Chute({ jogoIniciado, setJogoIniciado, setBotoesLetras, setPalavraOculta, setErros }) {
     const [valor, setValor] = useState('');
@@ -10,7 +11,7 @@ export default function Chute({ jogoIniciado, setJogoIniciado, setBotoesLetras, 
         if (valor === '') {
             return;
         }
-        const vitoria = palavras[0] === valor;
+        const vitoria = unidecode(palavras[0]).replaceAll('ç', 'c') === unidecode(valor).replaceAll('ç', 'c');
         fimDeJogo(vitoria, setBotoesLetras, setPalavraOculta, setJogoIniciado, setErros);
         setValor('');
     }
