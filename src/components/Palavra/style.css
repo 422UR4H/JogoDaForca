@@ -1,8 +1,12 @@
+div.palavra {
+    display: flex;
+    margin-bottom: 30px;
+}
+
 div.caractere {
     font-size: 50px;
     font-weight: 700;
 
-    width: 21px;
     margin: 13px;
 }
 

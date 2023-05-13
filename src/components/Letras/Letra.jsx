@@ -3,14 +3,13 @@ import palavras from "../../palavras";
 import Palavra from "../Palavra/Palavra";
 import fimDeJogo from "../../scripts/fimDeJogo";
 
-export default function Letra({ letra, cor, setCor, botoesLetras, setBotoesLetras, incrementaErros, setPalavraOculta, arrayPalavra, setArrayPalavra, setJogoIniciado }) {
+export default function Letra({ letra, cor, botoesLetras, setBotoesLetras, incrementaErros, setPalavraOculta, arrayPalavra, setArrayPalavra, setJogoIniciado }) {
     function onPlay() {
         // desabilitando botão clicado
         setBotoesLetras(botoesLetras.filter((l) => l !== letra));
 
         if (palavras[0].includes(letra)) {
             const novaArrayPalavra = [...arrayPalavra];
-            console.log(arrayPalavra, novaArrayPalavra);
 
             for (let i = 0; i < arrayPalavra.length; i++) {
                 if (palavras[0][i] === letra) {
@@ -21,7 +20,7 @@ export default function Letra({ letra, cor, setCor, botoesLetras, setBotoesLetra
 
             let novaCor = cor;
             if (!novaArrayPalavra.includes('_')) {
-                fimDeJogo(true, setCor, setBotoesLetras, setPalavraOculta, setJogoIniciado);
+                fimDeJogo(true, setBotoesLetras, setPalavraOculta, setJogoIniciado);
                 novaCor = "verde";
             }
 

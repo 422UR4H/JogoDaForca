@@ -28,7 +28,7 @@ function App() {
     }
     setErros(erros + 1);
     if (erros >= 5) {
-      fimDeJogo(false, setCor, setBotoesLetras, setPalavraOculta, setJogoIniciado);
+      fimDeJogo(false, setBotoesLetras, setPalavraOculta, setJogoIniciado);
     }
   }
 
@@ -53,7 +53,6 @@ function App() {
         setArrayPalavra={setArrayPalavra}
         setJogoIniciado={setJogoIniciado}
         cor={cor}
-        setCor={setCor}
       />
       <Chute jogoIniciado={jogoIniciado}
         setJogoIniciado={setJogoIniciado}
