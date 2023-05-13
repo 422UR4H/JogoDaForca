@@ -9,6 +9,10 @@ button:disabled {
     color: #798A9F;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 @media (max-width: 940px) {
     div.jogo {
         width: 100%;

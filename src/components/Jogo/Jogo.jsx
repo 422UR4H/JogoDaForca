@@ -5,7 +5,7 @@ import comparator from '../../scripts/comparator';
 import './style.css';
 
 
-export default function Jogo({ src, alt, setCor, setBotoesLetras, palavraOculta, setPalavraOculta, setArrayPalavra, setJogoIniciado, setErros }) {
+export default function Jogo({ src, setCor, setBotoesLetras, palavraOculta, setPalavraOculta, setArrayPalavra, setJogoIniciado, setErros }) {
     function iniciarJogo() {
         palavras.sort(comparator);
         const novoArrayPalavra = palavras[0].split('').map(() => '_');
@@ -19,7 +19,7 @@ export default function Jogo({ src, alt, setCor, setBotoesLetras, palavraOculta,
 
     return (
         <div className="jogo">
-            <img className="forca" src={src} alt={alt} data-test="game-image" />
+            <img className="forca" src={src} data-test="game-image" />
             <div>
                 <button data-test="choose-word" onClick={() => iniciarJogo()}>Escolher Palavra</button>
                 {palavraOculta}

@@ -28,14 +28,13 @@ function App() {
     }
     setErros(erros + 1);
     if (erros >= 5) {
-      fimDeJogo(false, setBotoesLetras, setPalavraOculta, setJogoIniciado);
+      fimDeJogo(false, setBotoesLetras, setPalavraOculta, setJogoIniciado, setErros);
     }
   }
 
   return (
     <div className="App">
       <Jogo src={forca[erros]}
-        alt="forca0"
         setCor={setCor}
         setBotoesLetras={setBotoesLetras}
         palavraOculta={palavraOculta}
@@ -52,10 +51,14 @@ function App() {
         arrayPalavra={arrayPalavra}
         setArrayPalavra={setArrayPalavra}
         setJogoIniciado={setJogoIniciado}
+        setErros={setErros}
         cor={cor}
       />
       <Chute jogoIniciado={jogoIniciado}
         setJogoIniciado={setJogoIniciado}
+        setBotoesLetras={setBotoesLetras}
+        setPalavraOculta={setPalavraOculta}
+        setErros={setErros}
       />
     </div>
   );
