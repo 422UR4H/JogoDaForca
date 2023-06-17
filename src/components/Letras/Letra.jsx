@@ -28,13 +28,11 @@ export default function Letra(props) {
         if (palavra.includes(letra)) {
             const novaArrayPalavra = [...arrayPalavra];
 
-            console.log(novaArrayPalavra);
             for (let i = 0; i < arrayPalavra.length; i++) {
                 if (palavra[i] === letra) {
                     novaArrayPalavra[i] = palavras[0][i];
                 }
             }
-            console.log(novaArrayPalavra);
             setArrayPalavra(novaArrayPalavra);
 
             let novaCor = cor;
