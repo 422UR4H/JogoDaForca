@@ -1,5 +1,5 @@
-import Caractere from "./Caractere";
 import "./style.css";
+import Caractere from "./Caractere";
 
 export default function Palavra({ arrayPalavra, cor }) {
     return (

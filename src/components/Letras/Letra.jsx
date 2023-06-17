@@ -4,21 +4,37 @@ import Palavra from "../Palavra/Palavra";
 import fimDeJogo from "../../scripts/fimDeJogo";
 import unidecode from "unidecode";
 
-export default function Letra({ letra, cor, botoesLetras, setBotoesLetras, incrementaErros, setPalavraOculta, arrayPalavra, setArrayPalavra, setJogoIniciado, setErros }) {
+
+export default function Letra(props) {
+    const {
+        letra,
+        cor,
+        botoesLetras,
+        setBotoesLetras,
+        incrementaErros,
+        setPalavraOculta,
+        arrayPalavra,
+        setArrayPalavra,
+        setJogoIniciado,
+        setErros
+    } = props;
+
+
     function onPlay() {
         // desabilitando botão clicado
         setBotoesLetras(botoesLetras.filter((l) => l !== letra));
 
-        // const unidecode = require("unidecode");
         const palavra = unidecode(palavras[0]).replaceAll('ç', 'c');
         if (palavra.includes(letra)) {
             const novaArrayPalavra = [...arrayPalavra];
 
+            console.log(novaArrayPalavra);
             for (let i = 0; i < arrayPalavra.length; i++) {
                 if (palavra[i] === letra) {
-                    novaArrayPalavra[i] = letra;
+                    novaArrayPalavra[i] = palavras[0][i];
                 }
             }
+            console.log(novaArrayPalavra);
             setArrayPalavra(novaArrayPalavra);
 
             let novaCor = cor;

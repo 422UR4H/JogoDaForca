@@ -4,14 +4,27 @@ import palavras from "../../palavras";
 import fimDeJogo from "../../scripts/fimDeJogo";
 import unidecode from "unidecode";
 
-export default function Chute({ jogoIniciado, setJogoIniciado, setBotoesLetras, setPalavraOculta, setErros }) {
+
+export default function Chute(props) {
+    const {
+        jogoIniciado,
+        setJogoIniciado,
+        setBotoesLetras,
+        setPalavraOculta,
+        setErros
+    } = props;
+
     const [valor, setValor] = useState('');
+
 
     function chutar() {
         if (valor === '') {
             return;
         }
-        const vitoria = unidecode(palavras[0]).replaceAll('ç', 'c') === unidecode(valor).replaceAll('ç', 'c');
+        const vitoria =
+            unidecode(palavras[0]).replaceAll('ç', 'c') ===
+            unidecode(valor).replaceAll('ç', 'c');
+
         fimDeJogo(vitoria, setBotoesLetras, setPalavraOculta, setJogoIniciado, setErros);
         setValor('');
     }
@@ -35,7 +48,9 @@ export default function Chute({ jogoIniciado, setJogoIniciado, setBotoesLetras, 
             <button disabled={!jogoIniciado}
                 data-test="guess-button"
                 onClick={chutar}
-            >Chutar</button>
+            >
+                Chutar
+            </button>
         </div>
     );
 }
